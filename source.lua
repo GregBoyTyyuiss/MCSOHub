@@ -345,7 +345,7 @@ blatantsec:Button("Admin Radio", function()
     game:GetService("Teams")["Department of Transportation"].Radio:Clone().Parent = plr.Backpack
 end)
 
-local Uniform = blatantsec:Dropdown("Fake Uniforms (SS)", {"PSP Uniform","MCSO Uniform"},"None","Dropdown", function(t)
+local Uniform = blatantsec:Dropdown("Fake Uniforms (SS)", {"PSP Uniform","MCSO Uniform", "CMPD Uniform"},"None","Dropdown", function(t)
     if t == "PSP Uniform" then
         local args = {
             [1] = "UNI",
@@ -385,7 +385,30 @@ local Uniform = blatantsec:Dropdown("Fake Uniforms (SS)", {"PSP Uniform","MCSO U
             
             game:GetService("ReplicatedStorage").MCSOLocker:FireServer(unpack(args))            
             game:GetService("ReplicatedStorage").MCSOLocker:FireServer(unpack(args2))            
-            game:GetService("ReplicatedStorage").MCSOLocker:FireServer(unpack(args3))            
+            game:GetService("ReplicatedStorage").MCSOLocker:FireServer(unpack(args3))      
+            else if t == "CMPD Uniform" then
+                local args = {
+                    [1] = "UNI",
+                    [2] = 5095182267
+                }
+                
+                local args2 = {
+                    [1] = "MP5Vest"
+                }
+
+                local args3 = {
+                    [1] = "LegHolster"
+                }
+
+                local args4 = {
+                    [1] = "LegBelt"
+                }
+                
+                game:GetService("ReplicatedStorage").CTPDLocker:FireServer(unpack(args))                                
+                game:GetService("ReplicatedStorage").CTPDLocker:FireServer(unpack(args2))               
+                game:GetService("ReplicatedStorage").CTPDLocker:FireServer(unpack(args3))                            
+                game:GetService("ReplicatedStorage").CTPDLocker:FireServer(unpack(args4))                
+            end
         end
     end
  end)
