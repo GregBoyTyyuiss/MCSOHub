@@ -345,6 +345,51 @@ blatantsec:Button("Admin Radio", function()
     game:GetService("Teams")["Department of Transportation"].Radio:Clone().Parent = plr.Backpack
 end)
 
+local Uniform = blatantsec:Dropdown("Fake Uniforms (SS)", {"PSP Uniform","MCSO Uniform"},"None","Dropdown", function(t)
+    if t == "PSP Uniform" then
+        local args = {
+            [1] = "UNI",
+            [2] = 3862921730,
+            [3] = 3888735564
+        }
+        
+        local args2 = {
+            [1] = "M4Vest"
+        }
+
+        local args3 = {
+            [1] = "LegBelt"
+        }
+
+        local args4 = {
+            [1] = "LegHolster"
+        }
+        
+        game:GetService("ReplicatedStorage").PSPLocker:FireServer(unpack(args4))                
+        game:GetService("ReplicatedStorage").PSPLocker:FireServer(unpack(args3))       
+        game:GetService("ReplicatedStorage").PSPLocker:FireServer(unpack(args))       
+        game:GetService("ReplicatedStorage").PSPLocker:FireServer(unpack(args2))        
+        else if t == "MCSO Uniform" then
+            local args = {
+                [1] = "UNI",
+                [2] = 4592819039
+            }
+
+            local args2 = {
+                [1] = "MP5Vest"
+            }
+            
+            local args3 = {
+                [1] = "LegHolster"
+            }
+            
+            game:GetService("ReplicatedStorage").MCSOLocker:FireServer(unpack(args))            
+            game:GetService("ReplicatedStorage").MCSOLocker:FireServer(unpack(args2))            
+            game:GetService("ReplicatedStorage").MCSOLocker:FireServer(unpack(args3))            
+        end
+    end
+ end)
+
 
 --Updates
 local updatetab = win:Tab("Change Log")
@@ -352,6 +397,7 @@ local newupdatessec = updatetab:Section("New Changes")
 local oldchanges = updatetab:Section("Old Changes")
 
 --New Changes
+local FAKEUNIFORM = newupdatessec:Label("-Added Fake Uniforms to Trolling")
 local whitelist = newupdatessec:Label("-Added Whitelist System")
 local adminradio = newupdatessec:Label("-Added Admin Radio to Trolling")
 local radioflooder = newupdatessec:Label("-Added Radio Flooder & Trolling Tab!")
