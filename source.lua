@@ -7,13 +7,6 @@ local v1 = game.ReplicatedStorage:WaitForChild("MoneyData")[plr.Name];
 local godmode = false
 local whitelist = isfile("mcsowhitelisthub.txt")
 
-if whitelist then
-    print("Whitelisted User")
-else
-    plr:Kick("\nNot Whitelisted")
-end
-
-
 if game.PlaceId == 6570234816 then
     print("Correct Game!")
 else
